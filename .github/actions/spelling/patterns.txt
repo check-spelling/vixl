@@ -1,0 +1,24 @@
+# See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-patterns
+
+# pseudo hex-digits
+\b[0-9a-dA-D]{4}(?:\.[0-9a-h]{4})+\b
+
+# hex digits including css/html color classes:
+(?:[\\0][xX]|\\u|[uU]\+|#x?|\%23|\bl_)[0-9a-fA-FgGrR_]{2,}(?:[uUlL]{0,3}|u\d+)\b
+
+# version suffix <word>v#
+[Vv]\d+(?:\b|(?=[a-zA-Z_]))
+
+# Compiler flags
+[\t "'`=(]-[DWf]
+
+# acceptable duplicates
+# ls directory listings
+[-bcdlpsw](?:[-r][-w][-sx]){3}\s+\d+\s+(\S+)\s+\g{-1}\s+\d+\s+
+# C types
+\s(abcdefgh|long|LONG)(?: \g{-1})+\s
+# javadoc / .net
+(?:\@(?:groupname|param)|(?:public|private)(?:\s+static|\s+readonly)*)\s+(\w+)\s+\g{-1}\s
+
+# ignore long runs of a single character:
+\b([A-Za-z])\g{-1}{3,}\b
