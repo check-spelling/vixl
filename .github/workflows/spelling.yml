@@ -49,7 +49,6 @@ jobs:
         checkout: true
         spell_check_this: check-spelling/spell-check-this@prerelease
         task: ${{ needs.spelling.outputs.followup }}
-        debug: 1
 
   update:
     name: Update PR
