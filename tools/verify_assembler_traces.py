@@ -272,7 +272,7 @@ def ConvertToLLVMFormat(vixl_instruction, triple):
       # Fall back to a LLVM making the right decision.
       return "mov {}, #{}".format(*matches)
     llvm_mc_instruction_converters[:0] = [
-        # The ARM ARM specifies that if <Rn> is PC in either an ADD or SUB
+        # The ARM specifies that if <Rn> is PC in either an ADD or SUB
         # instruction with an immediate, the assembler should use the ADR
         # encoding. LLVM does not know about this subtlety. We get around this
         # by manually translating the instruction to their ADR form.
