@@ -43,12 +43,13 @@ jobs:
     if: (success() || failure()) && needs.spelling.outputs.followup
     steps:
     - name: comment
-      uses: check-spelling/check-spelling@prerelease
+      uses: jsoref/check-spelling@prerelease
       with:
         experimental_apply_changes_via_bot: 1
         checkout: true
         spell_check_this: check-spelling/spell-check-this@prerelease
         task: ${{ needs.spelling.outputs.followup }}
+        debug: 1
 
   update:
     name: Update PR
