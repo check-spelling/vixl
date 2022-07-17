@@ -25,7 +25,7 @@ jobs:
     steps:
     - name: check-spelling
       id: spelling
-      uses: check-spelling/check-spelling@prerelease
+      uses: jsoref/check-spelling@prerelease
       with:
         experimental_apply_changes_via_bot: 1
         suppress_push_for_open_pull_request: 1
